@@ -1,0 +1,59 @@
+% ----------------------------------------------------------------------
+% 
+%   Instructions for example codes of the following paper:
+%
+%   Learning and Selecting Features Jointly 
+%   with Point-wise Gated Boltzmann Machines
+%
+%   Kihyuk Sohn, Guanyu Zhou, Chansoo Lee, and Honglak Lee
+%   ICML, 2013
+%
+%
+%   last updated: 2013/06/18
+% ----------------------------------------------------------------------
+
+This matlab package contains demo codes of point-wise Gated Boltzmann 
+machine on variations of MNIST database (mnist-back-image, mnist-back-rand)
+running on the MATLAB with or without GPU Jacket.
+
+
+Instructions:
+
+a1. download and unarchive the code package.
+
+a2. download MNIST variations datasets (mnist-back-image, mnist-back-rand) 
+    from the url below and place them into data folder:
+    
+    http://www.iro.umontreal.ca/~lisa/twiki/bin/view.cgi/Public/MnistVariations
+
+a3. download and compile the latest liblinear code package (liblinear-1.93)
+    from the following url:
+
+    http://www.csie.ntu.edu.tw/~cjlin/liblinear/
+
+b.  open MATLAB and provide following information.
+
+    1.  dataset you want to evaluate:
+    >> dataset = 'mnist_bgimg'; % or 'mnist_bgrand';
+
+    2.  add liblinear library.
+
+    3.  if your system is equipped with GPU Jacket, 
+    >> usejacket = 1;
+    >> gselect(1);
+
+        if your system is not equipped with GPU Jacket,    
+    >> usejacket = 0;
+
+c.  run demo code.
+    >> demo_pgbm;
+
+
+===========================================================================
+
+For convenience, we included the following in our code package:
+
+a.  Feature selection algorithm (T-test) from Arizona State University.
+    Original implementation can be downloaded from
+
+    http://featureselection.asu.edu/software.php#
